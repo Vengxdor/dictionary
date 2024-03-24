@@ -1,5 +1,8 @@
 # DefineSphere dictionary
 
+API:
+[api](https://api.dictionaryapi.dev/api/v2/entries/en/keyboard)
+
 Your users should be able to:
 
 - Search for words using the input field

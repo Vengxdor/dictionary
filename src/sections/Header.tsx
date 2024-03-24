@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BookIcon } from '../icons/BookIcon'
-import './switcher.css'
-import SelectFont from './SelectFont'
+import '../components/switcher.css'
+import SelectFont from '../components/SelectFont'
 
 function Header () {
   // @ts-expect-error parse exists in JSON
@@ -21,19 +21,20 @@ function Header () {
   }, [mode])
 
   return (
-    <header className='flex justify-between items-center py-3'>
+    <header className='flex justify-between items-center pt-5 pb-7'>
       <BookIcon className='w-7 h-7'/>
 
-      <div className='flex gap-3 items-center'>
+      <nav className='flex gap-3 items-center'>
         <SelectFont />
         <div className='border-l pl-3 flex gap-3 items-center'>
-          <label className="switch">
-            <input checked={mode} onChange={handleDarkMode} className="checkbox" type="checkbox"/>
+          <label htmlFor='dark-mode' className="switch">
+            <input id='dark-mode' checked={mode} onChange={handleDarkMode} className="checkbox" type="checkbox"/>
             <span className="slider"></span>
           </label>
           <i className={`fa-solid fa-xl ${mode ? 'fa-sun' : 'fa-moon'}`}></i>
         </div>
-      </div>
+      </nav>
+
     </header>
   )
 }
