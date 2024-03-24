@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --current-font: arial, serif, sans-serif, monospace;
   font-family: var(--current-font);
   line-height: 1.5;
   font-weight: 400;
@@ -17,6 +16,7 @@
 
 html.dark {
   background-color: rgb(255, 255, 255);
+  color: #050505;
 }
 
 html {
