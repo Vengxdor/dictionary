@@ -1,15 +1,19 @@
 import { FormEvent, useState } from 'react'
 import { searchWord } from '../service/dictionarySearch'
+import { useWordContext } from '../hooks/useWordContext'
 
 function SearchWord () {
   const [newWord, setNewWord] = useState('')
+  const { setWordInfo } = useWordContext()
+
   const handleSearch = async (e: FormEvent) => {
     e.preventDefault()
     if (newWord.trim() === '') return
 
     const data = await searchWord(newWord)
     // Store the word in localStorage.
-    localStorage.setItem('word', JSON.stringify(data))
+    setWordInfo(data[0])
+    console.log(data[0])
     setNewWord('')
   }
   return (
