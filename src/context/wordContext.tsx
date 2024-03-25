@@ -18,7 +18,7 @@ type Props = {
 export function WordProvider ({ children }: Props) {
   const storageWord = localStorage.getItem('word')
   // @ts-expect-error parse exist in Json.
-  const initialWordInfo: WordInfo = JSON.parse(storageWord) ?? []
+  const initialWordInfo: WordInfo = JSON.parse(storageWord) ?? {}
 
   const [wordInfo, setWordInfo] = useState<DictionaryRes>(initialWordInfo)
 
