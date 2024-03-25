@@ -13,11 +13,10 @@ function SearchWord () {
     const data = await searchWord(newWord)
     // Store the word in localStorage.
     setWordInfo(data[0])
-    console.log(data[0])
     setNewWord('')
   }
   return (
-    <form onSubmit={handleSearch} className="flex bg-zinc-800 rounded-lg">
+    <form onSubmit={handleSearch} className="flex rounded-lg bg-zinc-800 dark:bg-zinc-200/40">
       <input
         value={newWord}
         onChange={(e) => setNewWord(e.target.value)}

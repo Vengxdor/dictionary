@@ -2,7 +2,6 @@ import { useWordContext } from '../hooks/useWordContext'
 
 function Source () {
   const { wordInfo } = useWordContext()
-  console.log(wordInfo)
   return (
     <footer className='mt-6 pt-6 border-t border-white/10 dark:border-zinc-200'>
       {/* <hr className=''/> */}
