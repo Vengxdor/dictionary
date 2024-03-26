@@ -1,9 +1,16 @@
 # DefineSphere dictionary
 
 API:
-[api](https://api.dictionaryapi.dev/api/v2/entries/en/keyboard)
+[DictionaryAPI](https://api.dictionaryapi.dev/api/v2/entries/en/keyboard)
 
-Your users should be able to:
+### Tools
+- React
+- Tailwind
+- Typescript 
+
+
+
+### Users should be able to:
 
 - Search for words using the input field
 - See the Free Dictionary API's response for the searched word
@@ -13,6 +20,11 @@ Your users should be able to:
 - Switch between light and dark themes
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
-- Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
+
 
 - I think it will take me 3 hours to finish this page
+
+## images:
+![Project images](./src/mocks/desktop.jpg)
+![Project images](./src/mocks/tablet.jpg)
+![Project images](./src/mocks/mobile.jpg)

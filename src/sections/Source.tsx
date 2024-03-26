@@ -8,7 +8,7 @@ function Source () {
       <h2 className='text-white/60  dark:text-zinc-400 text-lg'>Source</h2>
 
       {wordInfo.sourceUrls?.map((url, index) => (
-        <a className='underline flex gap-2 items-center cursor-pointer' key={index} href={url}>
+        <a target='_blank' className='underline flex gap-2 items-center cursor-pointer' key={index} href={url}>
           {url}
           <i className="fa-solid fa-up-right-from-square opacity-50 fa-sm"></i>
         </a>

@@ -8,11 +8,11 @@ import Word from './sections/Word'
 function App () {
   const { wordInfo, error } = useWordContext()
   return (
-    <div className='w-11/12 mx-auto md:w-10/12 lg:w-8/12 xl:w-1/2'>
+    <div className='w-11/12 mx-auto md:w-10/12 lg:w-8/12 xl:w-1/2 '>
       <Header />
       <SearchWord />
 
-      <main>
+      <main className='main'>
         {wordInfo?.word && !error?.title
           ? (
             <>
