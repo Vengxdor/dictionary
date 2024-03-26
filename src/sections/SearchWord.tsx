@@ -4,16 +4,23 @@ import { useWordContext } from '../hooks/useWordContext'
 
 function SearchWord () {
   const [newWord, setNewWord] = useState('')
-  const { setWordInfo } = useWordContext()
+  const { setWordInfo, setError } = useWordContext()
 
   const handleSearch = async (e: FormEvent) => {
     e.preventDefault()
     if (newWord.trim() === '') return
-
-    const data = await searchWord(newWord)
-    // Store the word in localStorage.
-    setWordInfo(data[0])
-    setNewWord('')
+    try {
+      const data = await searchWord(newWord)
+      if (data?.title) {
+        setError(data)
+        return
+      }
+      setWordInfo(data)
+      setError({ word: newWord })
+      setNewWord('')
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <form onSubmit={handleSearch} className="flex rounded-lg bg-zinc-800 dark:bg-zinc-200/40">

@@ -30,11 +30,17 @@ export type DictionaryRes = {
   meanings?: Meaning[];
   license?: License;
   sourceUrls?: string[];
+  title?: string
+  message?: string
+  resolution?: string
 }
 
-export const searchWord = async (word: string): Promise<DictionaryRes[]> => {
+export const searchWord = async (word: string): Promise<DictionaryRes> => {
   const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
   const data = await res.json()
 
-  return data as DictionaryRes[]
+  if (Array.isArray(data)) {
+    return data[0] as DictionaryRes
+  }
+  return data as DictionaryRes
 }
